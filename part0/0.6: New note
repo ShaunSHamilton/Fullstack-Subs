@@ -1,0 +1,7 @@
+title Single Page App Note
+User->browser: Testing New SPA Note
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+note over browser:
+Browser uses main.js to display data.json
+end note
+server-->browser: HTTP code 201

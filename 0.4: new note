@@ -1,0 +1,19 @@
+title Sending A New Note
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+server-->browser: HTTP status code 302
+browser->server: HTTP GET /notes
+server-->browser: HTML /notes
+note over browser:
+Browser reloads page
+end note
+browser->server: HTTP GET /main.css
+browser->server: HTTP GET /main.js
+server-->browser: Fetches main.css and main.js
+note over browser:
+main.js causes browser to request data.json
+end note
+browser->server: HTTP GET /data.json
+server-->browser: Fetches data.json
+note over browser:
+Browser inserts data.json into html
+end note

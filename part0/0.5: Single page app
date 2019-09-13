@@ -1,0 +1,20 @@
+title Single Page App
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+note over server:
+Server fetches request
+end note
+server-->browser: HTTP code 200 with HTML
+note over browser:
+HTML causes requests
+end note
+browser->server: HTTP GET /main.css
+browser->server: HTTP GET /main.js
+server-->browser: HTTP code 200 with main.css and main.js
+note over browser:
+main.js causes request for data.json
+end note
+browser->server: HTTP GET /data.json
+server-->browser: HTTP code 200 with data.json
+note over browser:
+main.js takes data.json and displays it with HTML
+end note
